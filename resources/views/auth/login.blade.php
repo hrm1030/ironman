@@ -74,12 +74,12 @@
                             </div>
 
                             <input type="submit" name="uwp_login_submit" value="Log in">
-                        </form>
+                        </form><br>
                         <h5 class="text-center">Or</h5>
                         <div class="row">
                             <div class="col-md-6 input-icon">
                                 
-                                <button class="btn btn-success btn-lg btn-block"><img src="{{ url('assets/images/google.png') }}">Continue with Google</button>
+                                <button class="btn btn-success btn-lg btn-block"><div style="background-color: white;float:left;width:8%;height:auto;"><img src={{ url('assets/images/google.png') }}></div>Continue with Google</button>
                             </div>
                             <div class="col-md-6 input-icon">
                                 <i class="fab fa-facebook-f"></i>
@@ -189,7 +189,18 @@
                                         <!-- <button type="submit">submit</button> -->
                                             <!-- <a href="" type="submit" id="mylink"   class="signup-next-button">Next</a> -->
 
-                                    </form>
+                                    </form><br>
+                                    <h5 class="text-center">Or</h5>
+                                    <div class="row">
+                                        <div class="col-md-6 input-icon">
+                                            
+                                            <button class="btn btn-success btn-lg btn-block"><div style="background-color: white;float:left;width:8%;height:auto;"><img src={{ url('assets/images/google.png') }}></div>Continue with Google</button>
+                                        </div>
+                                        <div class="col-md-6 input-icon">
+                                            <i class="fab fa-facebook-f"></i>
+                                            <button class="btn btn-primary btn-lg btn-block">Continue with facebook</button>
+                                        </div>
+                                    </div>
 
                                 </div>
                                 <div class="tab-pane fade" id="business">
@@ -209,6 +220,17 @@
                                             <input class="w-100" type="password" placeholder="Password*" name="password" id="passwordInput" required>
                                             <label class="show-pass-btn"><i class="fas fa-eye"></i><input type="checkbox" onclick="showPassword()"></label>
                                             <p id="password-strength-text" class="mb-1 mt-3 text-left"></p>
+                                        </div>
+                                        
+                                        @if ($errors->has('password'))
+                                            <span class="help-block">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                        @endif
+                                        <div class="position-relative">
+                                            <input class="w-100" type="password" placeholder="Password Confirm*" name="password_confirmation" id="passwordInput" required>
+                                            <label class="show-pass-btn"><i class="fas fa-eye"></i><input type="checkbox" onclick="showPassword()"></label>
+                                            <p id="password-strength-text" class="mb-1 mt-3 text-left"></p>
                                             <meter max="4" id="password-strength-meter"></meter>
                                         </div>
 
@@ -222,7 +244,18 @@
 
                                         <input name="register" value="Register" type="submit">
 
-                                    </form>
+                                    </form><br>
+                                    <h5 class="text-center">Or</h5>
+                                    <div class="row">
+                                        <div class="col-md-6 input-icon">
+                                            
+                                            <button class="btn btn-success btn-lg btn-block"><div style="background-color: white;float:left;width:8%;height:auto;"><img src={{ url('assets/images/google.png') }}></div>Continue with Google</button>
+                                        </div>
+                                        <div class="col-md-6 input-icon">
+                                            <i class="fab fa-facebook-f"></i>
+                                            <button class="btn btn-primary btn-lg btn-block">Continue with facebook</button>
+                                        </div>
+                                    </div>
 
                                 </div>
 

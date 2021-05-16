@@ -24,7 +24,7 @@ Route::prefix('/')->group(function() {
         Route::post('delete/{id}', 'ProfileController@delete')->name('profile.delete');
     });
 
-    Route::middleware('auth')->prefix('feedback')->group(function() {
+    Route::prefix('feedback')->group(function() {
         Route::get('/', 'FeedbackController@index')->name('feedback');
         Route::post('/save', 'FeedbackController@save')->name('feedback.save');
     });
