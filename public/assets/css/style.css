@@ -3358,7 +3358,9 @@ input[value="Submit rating"]:hover {
 .review_next {
     right: 40px
 }
-
+.owl-stage > .owl-item {
+    width: 25%;
+}
 #contact .owl-item {
     width: 390px;
     background-color: #fff;

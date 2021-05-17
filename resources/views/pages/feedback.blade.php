@@ -16,7 +16,6 @@
             <form action="{{ route('feedback.save') }}" method="post">
                 {{ csrf_field() }}
                 <div class="review-question-block">
-                <div style="color:green">
                         @if(session()->has('message'))
                             <div class="alert alert-success">
                                 <script>
@@ -25,7 +24,6 @@
                                 </script>
                             </div>
                         @endif
-                </div>
                     <h5 class="review-question">Are you rating a Recruitment Firm or Company internal recruitment team?</h5>
 
                     <div class="d-flex flex-column flex-md-row justify-content-between">
@@ -82,7 +80,7 @@
                     <label for="regarding">Date of contact regarding this role?</label>
                     <div class="input-icon right">
                         <i class="fa fa-angle-down"></i>
-                        <input type="text" name="regarding" data-date="20{{ date('y-m-d') }}" style="height: 44px;" class="date date-picker form-control input-lg" id="regarding" data-date-format="dd-mm-yyyy" required>
+                        <input type="text" name="regarding" data-date="20{{ date('y-m-d') }}" style="height: 44px;" class="date date-picker form-control input-lg" id="regarding" data-date-format="yyyy-mm-dd" required>
                     </div>
                 </div>
 

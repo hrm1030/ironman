@@ -133,7 +133,7 @@
                                             {{ csrf_field() }}
                                             <input class="w-100 mb-3" type="hidden" name="user_type" value="individual" required>
 
-                                        <input class="w-100 mb-3" type="name" placeholder="Full Name*" name="name" value="{{ old('name') }}" required>
+                                        <input class="w-100 mb-3" type="text" placeholder="Full Name*" name="name" value="{{ old('name') }}" required>
                                         @if ($errors->has('name'))
                                             <span class="help-block">
                                                 <strong>{{ $errors->first('name') }}</strong>
@@ -185,7 +185,7 @@
                                             <label for="recieve-news">Recieve news by email</label>
 
                                         </div>
-                                        <button type="submit" class="acc-setting-save">Save</button>
+                                        <button type="submit" class="acc-setting-save">Register</button>
                                         <!-- <button type="submit">submit</button> -->
                                             <!-- <a href="" type="submit" id="mylink"   class="signup-next-button">Next</a> -->
 
@@ -208,13 +208,13 @@
                                     <form class="text-center register-form" action="{{ route('register') }}" method="post">
                                     {{ csrf_field() }}
                                             <input class="w-100 mb-3" type="hidden" name="user_type" value="business" required>
-                                        <input class="w-100 mb-3" type="name" placeholder="Name*" name="name" required>
+                                        <input class="w-100 mb-3" type="text" placeholder="Full Name*" name="username" required>
 
                                         <input class="w-100 mb-3" type="text" placeholder="Company name*" name="company_name" required>
 
                                         <input class="w-100 mb-3" type="text" placeholder="Position in Company*" name="position_in_company" required>
 
-                                        <input class="w-100 mb-3" type="email" placeholder="Email*" name="email" required>
+                                        <input class="w-100 mb-3" type="email" placeholder="Email*" name="useremail" required>
 
                                         <div class="position-relative w-100">
                                             <input class="w-100" type="password" placeholder="Password*" name="password" id="passwordInput" required>
@@ -242,7 +242,7 @@
 
                                         </div>
 
-                                        <input name="register" value="Register" type="submit">
+                                        <button type="submit" class="acc-setting-save">Register</button>
 
                                     </form><br>
                                     <h5 class="text-center">Or</h5>

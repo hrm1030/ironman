@@ -47,13 +47,27 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
-            'name' => 'required|string|max:255',
-            'surname' => 'required|string|max:255',
-            'username_instead' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users',
-            'password' => 'required|string|min:6|confirmed',
-        ]);
+        if($data['user_type'] == "individual")
+        {
+            return Validator::make($data, [
+                'name' => 'required|string|max:255',
+                'surname' => 'required|string|max:255',
+                'username_instead' => 'required|string|max:255',
+                'email' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:6|confirmed',
+            ]);
+        }
+        if($data['user_type'] == "business")
+        {
+            die(print_r($data));
+            return Validator::make($data, [
+                'username' => 'required|string|max:255',
+                'company_name' => 'required|string|max:255',
+                'position_in_company' => 'required|string|max:255',
+                'useremail' => 'required|string|email|max:255|unique:users',
+                'password' => 'required|string|min:6|confirmed',
+            ]);
+        }
     }
 
     /**
@@ -65,13 +79,28 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         // die(print_r($data));
-        return User::create([
-            'name' => $data['name'],
-            'user_type' => $data['user_type'],
-            'surname' => $data['surname'],
-            'username_instead' => $data['username_instead'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-        ]);
+        if($data['user_type'] == "individual")
+        {
+            return User::create([
+                'name' => $data['name'],
+                'user_type' => $data['user_type'],
+                'surname' => $data['surname'],
+                'username_instead' => $data['username_instead'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+            ]);
+        }
+        if ($data['user_type'] == 'business')
+        {
+            return User::create([
+                'name' => $data['name'],
+                'user_type' => $data['user_type'],
+                'company_name' => $data['company_name'],
+                'position_in_company' => $data['position_in_company'],
+                'email' => $data['email'],
+                'password' => bcrypt($data['password']),
+            ]);
+        }
+        
     }
 }

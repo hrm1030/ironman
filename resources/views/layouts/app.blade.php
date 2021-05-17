@@ -23,11 +23,13 @@
     <link href="{{ url('assets/plugin/bootstrap-datepicker/css/datepicker3.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="../../assets/plugin/bootstrap-select/bootstrap-select.min.css"/>
     <link rel="stylesheet" type="text/css" href="../../assets/plugin/select2/select2.css"/>
+
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
     <link href="{{ url('assets/css/components-rounded.css') }}" id="style_components" rel="stylesheet" type="text/css"/>
     <link href="{{ url('assets/css/plugins.css') }}" rel="stylesheet" type="text/css"/>
 
 
-    <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet" type="text/css">
+    {{-- <link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet" type="text/css"> --}}
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
 
@@ -40,6 +42,8 @@
     <script type="text/javascript" src="{{ url('assets/plugin/bootstrap-select/bootstrap-select.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('assets/plugin/select2/select2.min.js') }}"></script>
     <script src="{{ url('assets/js/metronic.js') }}" type="text/javascript"></script>
+
+    <script src="assets/js/owl.carousel.js"></script>
     <script src="assets/js/script.js"></script>
 
     <script>

@@ -28,6 +28,10 @@ Route::prefix('/')->group(function() {
         Route::get('/', 'FeedbackController@index')->name('feedback');
         Route::post('/save', 'FeedbackController@save')->name('feedback.save');
     });
+
+    Route::prefix('category')->group(function() {
+        Route::get('/', 'CategoryController@index')->name('category');
+    });
 });
 
 
