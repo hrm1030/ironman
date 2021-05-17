@@ -24,7 +24,7 @@
 
                                 <img class="avatar-img mx-auto mx-lg-0" src="assets/images/profile3.png" alt="avatar" title="avatar">
 
-                                <button class="change-avatar-img-btn"><i class="fa fa-camera"></i></button>
+                                <button class="change-avatar-img-btn" type="file"><i class="fa fa-camera"></i></button>
 
                             </div>
 
@@ -345,7 +345,7 @@
 
                                             <div class="acc-single-number">0</div>
 
-                                            <div class="acc-single-description"><i class="far fa-star"></i> Reviews</div>
+                                            <div class="acc-single-description"><i class="fa fa-star-o"></i> Reviews</div>
 
                                         </li>
 
@@ -353,7 +353,7 @@
 
                                             <div class="acc-single-number">0</div>
 
-                                            <div class="acc-single-description"><i class="fas fa-user"></i> Reads</div>
+                                            <div class="acc-single-description"><i class="fa fa-user"></i> Reads</div>
 
                                         </li>
 
@@ -361,7 +361,7 @@
 
                                             <div class="acc-single-number">0</div>
 
-                                            <div class="acc-single-description"><i class="fas fa-thumbs-up"></i> Useful</div>
+                                            <div class="acc-single-description"><i class="fa fa-thumbs-up"></i> Useful</div>
 
                                         </li>
 

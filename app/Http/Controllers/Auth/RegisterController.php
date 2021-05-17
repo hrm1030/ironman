@@ -59,12 +59,12 @@ class RegisterController extends Controller
         }
         if($data['user_type'] == "business")
         {
-            die(print_r($data));
+            // die(print_r($data));
             return Validator::make($data, [
                 'username' => 'required|string|max:255',
                 'company_name' => 'required|string|max:255',
                 'position_in_company' => 'required|string|max:255',
-                'useremail' => 'required|string|email|max:255|unique:users',
+                'email' => 'required|string|email|max:255|unique:users',
                 'password' => 'required|string|min:6|confirmed',
             ]);
         }
@@ -93,7 +93,7 @@ class RegisterController extends Controller
         if ($data['user_type'] == 'business')
         {
             return User::create([
-                'name' => $data['name'],
+                'name' => $data['username'],
                 'user_type' => $data['user_type'],
                 'company_name' => $data['company_name'],
                 'position_in_company' => $data['position_in_company'],

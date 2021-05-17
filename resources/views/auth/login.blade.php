@@ -214,7 +214,7 @@
 
                                         <input class="w-100 mb-3" type="text" placeholder="Position in Company*" name="position_in_company" required>
 
-                                        <input class="w-100 mb-3" type="email" placeholder="Email*" name="useremail" required>
+                                        <input class="w-100 mb-3" type="email" placeholder="Email*" name="email" required>
 
                                         <div class="position-relative w-100">
                                             <input class="w-100" type="password" placeholder="Password*" name="password" id="passwordInput" required>
