@@ -51,7 +51,7 @@
                                             </strong>
                                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                                 @foreach ($menu['children'] as $ch_menu)
-                                                    <a class="dropdown-item py-2 {{ $ch_active }}" href="{{ $mdnu['url'].'/'.$ch_menu->url }}">{{ $ch_menu->name }}</a>
+                                                    <a class="dropdown-item py-2 {{ $ch_active }}" href="{{ url($menu['url'].'/'.$ch_menu->url) }}">{{ $ch_menu->name }}</a>
                                                 @endforeach
                                                 
                                             </div>
@@ -60,7 +60,7 @@
                                 @else
                                     <li class="menu-item nav-item">
                                         <strong>
-                                            <a href="{{ $menu['url']}}" class="{{ $active }}">{{ $menu['name'] }}</a>
+                                            <a href="{{ url($menu['url'])}}" class="{{ $active }}">{{ $menu['name'] }}</a>
                                         </strong>
                                     </li>
                                 @endif

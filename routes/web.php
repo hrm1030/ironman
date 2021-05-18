@@ -32,7 +32,23 @@ Route::prefix('/')->group(function() {
     Route::prefix('category')->group(function() {
         Route::get('/', 'CategoryController@index')->name('category');
     });
+
+    Route::prefix('about')->group(function() {
+        Route::get('/', function() {
+            return view('pages.about');
+        });
+    });
+
+    Route::prefix('contact_us')->group(function() {
+        Route::get('/', function() {
+            return view('pages.contactus');
+        });
+    });
 });
 
 
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

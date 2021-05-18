@@ -80,13 +80,13 @@
 
                                 <li class="first-li">Follow us</li>
 
-                                <li class="footer-social"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li class="footer-social"><a href="#"><i class="fa fa-facebook"></i></a></li>
 
-                                <li class="footer-social"><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                <li class="footer-social"><a href="#"><i class="fa fa-instagram"></i></a></li>
 
-                                <li class="footer-social"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li class="footer-social"><a href="#"><i class="fa fa-twitter"></i></a></li>
 
-                                <li class="footer-social"><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                <li class="footer-social"><a href="#"><i class="fa fa-linkedin"></i></a></li>
 
                             </ul>
 

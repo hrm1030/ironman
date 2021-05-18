@@ -79,11 +79,11 @@
                         <div class="row">
                             <div class="col-md-6 input-icon">
                                 
-                                <button class="btn btn-success btn-lg btn-block"><div style="background-color: white;float:left;width:8%;height:auto;"><img src={{ url('assets/images/google.png') }}></div>Continue with Google</button>
+                                <a href="https://console.developers.google.com" class="btn btn-success btn-lg btn-block"><div style="background-color: white;float:left;width:8%;height:auto;"><img src={{ url('assets/images/google.png') }}></div>Continue with Google</a>
                             </div>
                             <div class="col-md-6 input-icon">
-                                <i class="fab fa-facebook-f"></i>
-                                <button class="btn btn-primary btn-lg btn-block">Continue with facebook</button>
+                                <i class="fa fa-facebook"></i>
+                                <a class="btn btn-primary btn-lg btn-block">Continue with facebook</a>
                             </div>
                         </div>
 
@@ -197,7 +197,7 @@
                                             <button class="btn btn-success btn-lg btn-block"><div style="background-color: white;float:left;width:8%;height:auto;"><img src={{ url('assets/images/google.png') }}></div>Continue with Google</button>
                                         </div>
                                         <div class="col-md-6 input-icon">
-                                            <i class="fab fa-facebook-f"></i>
+                                            <i class="fa fa-facebook"></i>
                                             <button class="btn btn-primary btn-lg btn-block">Continue with facebook</button>
                                         </div>
                                     </div>
@@ -252,7 +252,7 @@
                                             <button class="btn btn-success btn-lg btn-block"><div style="background-color: white;float:left;width:8%;height:auto;"><img src={{ url('assets/images/google.png') }}></div>Continue with Google</button>
                                         </div>
                                         <div class="col-md-6 input-icon">
-                                            <i class="fab fa-facebook-f"></i>
+                                            <i class="fa fa-facebook"></i>
                                             <button class="btn btn-primary btn-lg btn-block">Continue with facebook</button>
                                         </div>
                                     </div>
