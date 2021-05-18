@@ -15,7 +15,6 @@ $(document).ready(function() {
         var language = $('#language').val();
         var country = $('#country').val();
         var password = $('#password').val();
-
         $.ajax({
             url:'profile/save',
             method:'post',
@@ -41,6 +40,8 @@ $(document).ready(function() {
             error : function () {
                 toastr['error']('Errors in server.', 'Error');
             }
-        })
+        });
+        $('#photo_form').submit();
+        
     })
 });

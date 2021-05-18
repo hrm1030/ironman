@@ -22,10 +22,40 @@
 
                             <div class="d-flex justify-content-center flex-column position-relative">
 
-                                <img class="avatar-img mx-auto mx-lg-0" src="assets/images/profile3.png" alt="avatar" title="avatar">
+                                {{-- <img class="avatar-img mx-auto mx-lg-0" src="assets/images/profile3.png" alt="avatar" title="avatar"> --}}
 
-                                <button class="change-avatar-img-btn" type="file"><i class="fa fa-camera"></i></button>
-
+                                {{-- <button class="change-avatar-img-btn" type="file"><i class="fa fa-camera"></i></button> --}}
+                                <form action="{{ route('profile.save_photo') }}" id="photo_form" method="post" class="form-horizontal" enctype="multipart/form-data">
+                                    {{ csrf_field() }}
+                                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                                        <div class="fileinput-new thumbnail" style="width: 150px; height: 150px;border-radius:50%;">
+                                            @if (isset(Auth::user()->photo_url))
+                                                @php
+                                                    $photo = Auth::user()->photo_url;
+                                                @endphp
+                                            @else
+                                                @php
+                                                    $photo = '/upload/users/avatar.png';
+                                                @endphp
+                                            @endif
+                                            <img src="{{ url($photo) }}" alt="avatar"/>
+                                        </div>
+                                        <div class="fileinput-preview fileinput-exists thumbnail" style="width: 150px; height: 150px;border-radius:50%;">
+                                        </div>
+                                        <div>
+                                            <span  style="margin-top: -70px; margin-left:100px;" class="btn btn-success btn-icon-only btn-circle btn-file">
+                                            <span class="fileinput-new">
+                                            <i class="fa fa-camera"></i> </span>
+                                            <span class="fileinput-exists">
+                                            <i class="fa fa-recycle"></i> </span>
+                                            <input type="file" name="photo">
+                                            </span>
+                                            {{-- <a href="javascript:;" class="btn btn-danger btn-icon-only btn-circle fileinput-exists" data-dismiss="fileinput">
+                                            <i class="fa fa-trash"></i> </a> --}}
+                                        </div>
+                                    </div>
+                                </form>
+                                
                             </div>
 
                             <div class="d-flex nav mt-0">

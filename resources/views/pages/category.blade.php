@@ -508,55 +508,39 @@
 
 <!-- ---------------------------------- Recently reviewed slider -->
 
-<div class="review">
 
-    <div class="container-fluid px-0">
-
-        <h2 class="text-center">Recently <strong>Reviewed</strong></h2>
-
-        <div class="col px-0">
-
-            <div class="review_slider_container">
-
-                <div class="owl-carousel owl-theme review_slider">
-                            @foreach ($recent_reviews as $review)
-                            <div class="owl-item" style="background-color: white;">
-                                <div class="review_item">
-                                    <div class="d-flex flex-column flex-lg-row mb-3">
-                                        <div class="review-item-avatar pr-3">
-                                            <img src="{{ url('assets/images/profile1.png') }}" alt="customer" title="customer">
-                                        </div>
-                                        <div class="review-customer-details d-flex align-items-center">
-                                            <p class="review-avatar-name f-15 mb-0"><strong>{{ $review->reviewTitle }}</strong></p>
-                                        </div>
-                                    </div>
-                                    <p class="review-opinion">{{ $review->reviewtext }}</p>
-                                    <div class="d-flex flex-column text-left text-lg-right">
-                                        <div>
-                                            @for ($i = 0; $i < $review->stars; $i++)
-                                                <i class="fa fa-star text-warning"></i>
-                                            @endfor
-                                            @for ($i = 0; $i < 5-$review->stars; $i++)
-                                                <i class="fa fa-star-o text-warning"></i>
-                                            @endfor
-                                        </div>
-                                        <p class="reviews-number mb-0">1500 Reviews at <strong>Apple</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                            @endforeach
-                    
-                </div>
-                <!-- review Slider Navigation -->
-
-                <!-- <div class="review_nav review_prev"><i class="fas fa-chevron-left"></i></div> -->
-                <!-- <div class="review_nav review_next"><i class="fas fa-chevron-right"></i></div> -->
-
-            </div>
-
-        </div>
-
+<section id="recent-reviews">
+    <div class="container">
+        <h2 class="text-center">Recent <strong>reviews</strong></h2>
     </div>
-
-</div>
+    <div class="reviews-boxes">
+        <div class="owl-carousel owl-theme review-carousel2">
+            @foreach ($recent_reviews as $review)
+            <div class="owl-item">
+                <div class="review-box">
+                    <div class="review-header">
+                        <img src="assets/images/profile-pic-r.png" alt="Profile picture">
+                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
+                    </div>
+                    <div class="review-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    </div>
+                    <div class="review-rating text-right">
+                        @for ($i = 0; $i < $review->stars; $i++)
+                            <i class="fa fa-star text-info"></i>
+                        @endfor
+                        @for ($i = 0; $i < 5-$review->stars; $i++)
+                            <i class="fa fa-star-o text-info"></i>
+                        @endfor
+                    </div>
+                    <div class="review-meta text-right">
+                        <span>1500 Reviews at <strong>Google</strong></span>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+            
+        </div>
+    </div>
+</section>
 @endsection

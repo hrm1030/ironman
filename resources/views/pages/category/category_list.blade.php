@@ -11,109 +11,53 @@
 
         <h2 class="text-center"><strong>Browse companies by category</strong></h2>
 
-        <div class="container h-100 review-box">
+        <div class="container w-100 cat-list-box">
 
-            <div class="row h-100 height-auto">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="d-flex nav mt-0">
 
-                <div class="col-lg-5 h-100 height-auto px-0">
-
-                    <div class="navbar-light h-100 height-auto">
-
-                        <div class="h-100">
-
-                            <div class="d-flex nav mt-0">
-
-                                <ul class="nav nav-tabs d-flex flex-column mx-auto mx-lg-0" id="myAccount">
-                                    {{-- @foreach ($categories as $category) --}}
-                                    <li class="nav-item">
-
-                                        <a href="#2" class="nav-link py-2" data-toggle="tab">sdfsafsadfsa</a>
-
-                                    </li>
-                                    <li class="nav-item">
-
-                                        <a href="#9" class="nav-link py-2" data-toggle="tab">sdfsafsadfsa</a>
-
-                                    </li>
-                                    {{-- @endforeach --}}
-                                </ul>
-
-                            </div>
-
-                        </div>
-
+                        <ul class="nav nav-tabs d-flex flex-column mx-auto mx-lg-0" id="myAccount">
+                            @foreach ($categories as $category)
+                            <li class="nav-item">
+        
+                                <a href="#tab{{ $category['id'] }}" class="nav-link py-2" data-toggle="tab">{{ $category['name'] }}</a>
+        
+                            </li>
+                            @endforeach
+                            
+        
+                        </ul>
+        
                     </div>
-
                 </div>
-                <div class="col-lg-7">
+                <div class="col-md-7">
 
                     <div class="pl-sm-0 h-100 input-box pb-lg-0 pb-3 tab-content">
-                        {{-- @php
-                            $num = 1;
-                        @endphp
-                        @foreach ($categories as $category)
-                        @php
-                            if($num == 1) {
-                                $active = 'active';
-                            } else {
-                                $active = 'fade';
-                            }
-                            $num++;
-                        @endphp --}}
-                        <div class="tab-pane active" id="2">
-
+                        @foreach ($categories as $tabcategory)
+                        <div class="tab-pane fade  text-center text-lg-left" id="tab{{ $tabcategory['id'] }}">
                             <div class="row">
-
-                                <div class="col-md-6 text-center text-lg-left">
-                                    weqrwerqerwqrewqrqwr
-                                    {{-- <h3 class="mt-2 account-settings-name mb-0">{{ $category['name'] }}</h3> --}}
-
-
+                                <div class="col-md-6">
+                                    <h5 class="text-info">{{ $tabcategory['name'] }}</h5>
                                 </div>
-
-                                <div class="col-md-6 account-numbers">
-                                   
-                                    <ul>
-                                        {{-- @if (count($category['children'])> 0)
-                                            @foreach ($category['children'] as $ch_cat)
-                                                <li>{{ $ch_cat->name }}</li>
+                                <div class="col-md-6" style="border-left: 2px solid #BDE8F4;">
+                                    @if (count($tabcategory['children'])>0)
+                                        <ul>
+                                            @foreach ($tabcategory['children'] as $ch_cat)
+                                                <li><a href="{{ url( 'category/'.$tabcategory['id'].'/'.$ch_cat->id ) }}">{{ $ch_cat->name }}</a></li>
                                             @endforeach
-                                        @endif --}}
-                                    </ul>
+                                        </ul>
+                                    @endif
                                 </div>
-
                             </div>
-
+                            
                         </div>
-                        {{-- @endforeach	 --}}
-                        <div class="tab-pane fade" id="9">
+                        @endforeach
+                        
 
-                            <div class="row">
-
-                                <div class="col-md-6 text-center text-lg-left">
-                                    asdfasfsadf
-                                    {{-- <h3 class="mt-2 account-settings-name mb-0">{{ $category['name'] }}</h3> --}}
-
-
-                                </div>
-
-                                <div class="col-md-6 account-numbers">
-                                   
-                                    <ul>
-                                        {{-- @if (count($category['children'])> 0)
-                                            @foreach ($category['children'] as $ch_cat)
-                                                <li>{{ $ch_cat->name }}</li>
-                                            @endforeach
-                                        @endif --}}
-                                    </ul>
-                                </div>
-
-                            </div>
-
-                        </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         </div>
 

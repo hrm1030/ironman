@@ -11,17 +11,18 @@
 |
 */
 
-Route::get('/', function() {
-    return view('pages.index');
-});
+
 
 Auth::routes();
 
 Route::prefix('/')->group(function() {
+    Route::get('/', 'HomeController@index');
+    
     Route::middleware('auth')->prefix('profile')->group(function(){
         Route::get('/', 'ProfileController@index')->name('profile');
         Route::post('/save', 'ProfileController@save')->name('profile.save');
         Route::post('delete/{id}', 'ProfileController@delete')->name('profile.delete');
+        Route::post('save_photo', 'ProfileController@save_photo')->name('profile.save_photo');
     });
 
     Route::prefix('feedback')->group(function() {
@@ -31,6 +32,7 @@ Route::prefix('/')->group(function() {
 
     Route::prefix('category')->group(function() {
         Route::get('/', 'CategoryController@index')->name('category');
+        Route::get('/{pid}/{ch_id}', 'CategoryController@detail');
     });
 
     Route::prefix('about')->group(function() {
@@ -46,9 +48,3 @@ Route::prefix('/')->group(function() {
     });
 });
 
-
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

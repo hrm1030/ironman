@@ -2128,6 +2128,20 @@ meter[value="4"]::-moz-meter-bar {
     border-radius: 14px;
     position: relative;
 }
+#contact.account .cat-list-box {
+    background-color: #fff;
+    -webkit-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.16);
+    -moz-box-shadow: 0 3px 15px rgba(0, 0, 0, 0.16);
+    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.16);
+    margin-left: 85px;
+    margin-right: 85px;
+    width: unset;
+    max-width: unset;
+    padding-bottom: 44px;
+    padding-top: 30px;
+    border-radius: 14px;
+    position: relative;
+}
 
 #contact.account h2 {
     margin-bottom: 46px;
@@ -2445,6 +2459,14 @@ h4.category-title {
 
 .review-box {
     max-width: 650px !important;
+    margin: 0 auto !important;
+    padding-right: 60px;
+    padding-left: 60px;
+    
+}
+
+.cat-list-box {
+    max-width: 1000px !important;
     margin: 0 auto !important;
     padding-right: 60px;
     padding-left: 60px;

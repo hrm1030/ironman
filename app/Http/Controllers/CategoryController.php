@@ -20,4 +20,9 @@ class CategoryController extends Controller {
 
         // return view('pages.category.category_list')->with('categories', $categories);
     }
+
+    public function detail(Request $request)
+    {
+
+    }
 }

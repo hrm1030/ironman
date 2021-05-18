@@ -1,6 +1,19 @@
 @extends('layouts.app')
 
 @section('page-content')
+<script>
+    $(document).ready(function () {
+        var owl = $("#browser_slider");
+        owl.owlCarousel({
+            items : 10, //10 items above 1000px browser width
+            itemsDesktop : [1000,5], //5 items between 1000px and 901px
+            itemsDesktopSmall : [900,3], // betweem 900px and 601px
+            itemsTablet: [600,2], //2 items between 600 and 0
+            itemsMobile : false
+        });
+        
+    });
+</script>
 <section id="banner">
     <div class="container-fluid">
         <div class="row align-items-center justify-content-center">
@@ -13,7 +26,7 @@
                         Receiving valuable feedback also provides recruiters with areas of improvement; many are crying out for credible, reliable feedback!
                     </p>
                     <div class="d-flex flex-column align-items-start">
-                        <a class="button my-2" href="#">Leave a review</a>
+                        <a class="button my-2" href="{{ route('feedback') }}">Leave a review</a>
                         <a class="button my-2" href="#">Read a Review</a>
                     </div>
                 </div>
@@ -34,96 +47,49 @@
         </div>
     </div>
 </section>
-<section id="browse-category">
-    <div class="absolute-pics">
-        <div class="figure1">
-            <img src="assets/images/figure3.png" alt="Figure1">
+<section id="our-partners">
+    <div class="our-partners-boxes">
+        <div class="container">
+            <h2 class="text-center"><strong>Trending Industries</strong></h2>
         </div>
-    </div>
-    <div class="container">
-        <h2 class="text-center pb-2">Read a <strong>review</strong></h2>
-        <h2 class="text-center pt-2">Trending <strong>Sectors</strong></h2>
-    </div>
-    <div class="browse-boxes">
-        <div class="owl-carousel owl-theme browse-carousel" style="display: contents;">
-            <div class="owl-item">
-                <div class="single-box">
-                    <a href="#">
-                        <div class="browse-box d-flex flex-column justify-content-center align-items-center">
-                            <div class="browse-img">
-                                <img src="assets/images/browse1.png" alt="Shopping &amp; Fashion">
-                            </div>
-                            <p>Shopping &amp; Fashion</p>
+        <div class="row">
+            <div class="col">
+                <div class="brands_slider_container">
+                    <div class="owl-carousel owl-theme" id="browser_slider">
+                        <div class="owl-item">
+                            <div class="brands_item d-flex flex-column justify-content-center"><img src="assets/images/browse1.png" alt="Partner logo"></div>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="single-box">
-                    <a href="#">
-                        <div class="browse-box d-flex flex-column justify-content-center align-items-center">
-                            <div class="browse-img">
-                                <img src="assets/images/browse2.png" alt="Financial Services">
-                            </div>
-                            <p>Financial Services</p>
+                        <div class="owl-item">
+                            <div class="brands_item d-flex flex-column justify-content-center"><img src="assets/images/browse2.png" alt="Partner logo"></div>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="single-box">
-                    <a href="#">
-                        <div class="browse-box d-flex flex-column justify-content-center align-items-center">
-                            <div class="browse-img">
-                                <img src="assets/images/browse3.png" alt="Marketing">
-                            </div>
-                            <p>Marketing</p>
+                        <div class="owl-item">
+                            <div class="brands_item d-flex flex-column justify-content-center"><img src="assets/images/browse3.png" alt="Partner logo"></div>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="single-box">
-                    <a href="#">
-                        <div class="browse-box d-flex flex-column justify-content-center align-items-center">
-                            <div class="browse-img">
-                                <img src="assets/images/browse4.png" alt="Public Sector">
-                            </div>
-                            <p>Public Sector</p>
+                        <div class="owl-item">
+                            <div class="brands_item d-flex flex-column justify-content-center"><img src="assets/images/browse4.png" alt="Partner logo"></div>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="single-box">
-                    <a href="#">
-                        <div class="browse-box d-flex flex-column justify-content-center align-items-center">
-                            <div class="browse-img">
-                                <img src="assets/images/browse5.png" alt="Public Sector">
-                            </div>
-                            <p>Hospitality</p>
+                        <div class="owl-item">
+                            <div class="brands_item d-flex flex-column justify-content-center"><img src="assets/images/browse5.png" alt="Partner logo"></div>
                         </div>
-                    </a>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="single-box">
-                    <a href="#">
-                        <div class="browse-box d-flex flex-column justify-content-center align-items-center">
-                            <div class="browse-img">
-                                <img src="assets/images/browse6.png" alt="Legal">
-                            </div>
-                            <p>Legal</p>
+                        <div class="owl-item">
+                            <div class="brands_item d-flex flex-column justify-content-center"><img src="assets/images/browse6.png" alt="Partner logo"></div>
                         </div>
-                    </a>
+                    </div>
+                    <!-- Brands Slider Navigation -->
+                    <div class="browse-navigation">
+                        <div class="partner_prev"><img src="assets/images/left-arrow.svg" class="prev" alt="Previous arrow"></div>
+                        <div class="partner_next"><img src="assets/images/right-arrow.svg" class="next" alt="Next arrow"></div>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="browse-navigation" >
-            <!-- <div class="browse_prev"><img src="assets/images/left-arrow.svg" alt="Previous arrow"></div>
-            <div class="browse_next"><img src="assets/images/right-arrow.svg" alt="Next arrow"></div> -->
+        <div class="absolute-pics">
+            <div class="figure1">
+                <img src="assets/images/figure1.png" alt="Figure1">
+            </div>
         </div>
     </div>
+    
     <div class="browse-button text-center" style="padding-top:40px">
         <a class="button" href="#">Go take a look!</a>
     </div>
@@ -133,213 +99,57 @@
         <h2 class="text-center">Recent <strong>reviews</strong></h2>
     </div>
     <div class="reviews-boxes">
-        <div class="owl-carousel owl-theme review-carousel">
+        <div class="owl-carousel owl-theme review-carousel" id="browser_slider">
+            @foreach ($reviews as $review)
             <div class="owl-item">
                 <div class="review-box">
                     <div class="review-header">
                         <img src="assets/images/profile-pic-r.png" alt="Profile picture">
-                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
+                        <span><strong>Richard Gellen</strong> reviewed <strong>{{ $review->employer }}</strong></span>
                     </div>
                     <div class="review-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>{{ $review->reviewtext }}</p>
                     </div>
                     <div class="review-rating text-right">
-                        <img src="assets/images/rating.svg" alt="Rating">
+                        @for ($i = 0; $i < $review->stars; $i++)
+                            <i class="fa fa-star text-info"></i>
+                        @endfor
+                        @for ($i = 0; $i < 5-$review->stars; $i++)
+                            <i class="fa fa-star-o text-info"></i>
+                        @endfor
                     </div>
                     <div class="review-meta text-right">
                         <span>1500 Reviews at <strong>Google</strong></span>
                     </div>
                 </div>
             </div>
-            <div class="owl-item">
-                <div class="review-box">
-                    <div class="review-header">
-                        <img src="assets/images/profile-pic-r.png" alt="Profile picture">
-                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
-                    </div>
-                    <div class="review-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="review-rating text-right">
-                        <img src="assets/images/rating.svg" alt="Rating">
-                    </div>
-                    <div class="review-meta text-right">
-                        <span>1500 Reviews at <strong>Google</strong></span>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="review-box">
-                    <div class="review-header">
-                        <img src="assets/images/profile-pic-r.png" alt="Profile picture">
-                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
-                    </div>
-                    <div class="review-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="review-rating text-right">
-                        <img src="assets/images/rating.svg" alt="Rating">
-                    </div>
-                    <div class="review-meta text-right">
-                        <span>1500 Reviews at <strong>Google</strong></span>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="review-box">
-                    <div class="review-header">
-                        <img src="assets/images/profile-pic-r.png" alt="Profile picture">
-                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
-                    </div>
-                    <div class="review-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="review-rating text-right">
-                        <img src="assets/images/rating.svg" alt="Rating">
-                    </div>
-                    <div class="review-meta text-right">
-                        <span>1500 Reviews at <strong>Google</strong></span>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="review-box">
-                    <div class="review-header">
-                        <img src="assets/images/profile-pic-r.png" alt="Profile picture">
-                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
-                    </div>
-                    <div class="review-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="review-rating text-right">
-                        <img src="assets/images/rating.svg" alt="Rating">
-                    </div>
-                    <div class="review-meta text-right">
-                        <span>1500 Reviews at <strong>Google</strong></span>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="review-box">
-                    <div class="review-header">
-                        <img src="assets/images/profile-pic-r.png" alt="Profile picture">
-                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
-                    </div>
-                    <div class="review-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="review-rating text-right">
-                        <img src="assets/images/rating.svg" alt="Rating">
-                    </div>
-                    <div class="review-meta text-right">
-                        <span>1500 Reviews at <strong>Google</strong></span>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
         <div class="owl-carousel owl-theme review-carousel2">
+            @foreach ($reviews as $review)
             <div class="owl-item">
                 <div class="review-box">
                     <div class="review-header">
                         <img src="assets/images/profile-pic-r.png" alt="Profile picture">
-                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
+                        <span><strong>Richard Gellen</strong> reviewed <strong>{{ $review->employer }}</strong></span>
                     </div>
                     <div class="review-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <p>{{ $review->reviewtext }}</p>
                     </div>
                     <div class="review-rating text-right">
-                        <img src="assets/images/rating.svg" alt="Rating">
+                        @for ($i = 0; $i < $review->stars; $i++)
+                            <i class="fa fa-star text-info"></i>
+                        @endfor
+                        @for ($i = 0; $i < 5-$review->stars; $i++)
+                            <i class="fa fa-star-o text-info"></i>
+                        @endfor
                     </div>
                     <div class="review-meta text-right">
                         <span>1500 Reviews at <strong>Google</strong></span>
                     </div>
                 </div>
             </div>
-            <div class="owl-item">
-                <div class="review-box">
-                    <div class="review-header">
-                        <img src="assets/images/profile-pic-r.png" alt="Profile picture">
-                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
-                    </div>
-                    <div class="review-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="review-rating text-right">
-                        <img src="assets/images/rating.svg" alt="Rating">
-                    </div>
-                    <div class="review-meta text-right">
-                        <span>1500 Reviews at <strong>Google</strong></span>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="review-box">
-                    <div class="review-header">
-                        <img src="assets/images/profile-pic-r.png" alt="Profile picture">
-                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
-                    </div>
-                    <div class="review-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="review-rating text-right">
-                        <img src="assets/images/rating.svg" alt="Rating">
-                    </div>
-                    <div class="review-meta text-right">
-                        <span>1500 Reviews at <strong>Google</strong></span>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="review-box">
-                    <div class="review-header">
-                        <img src="assets/images/profile-pic-r.png" alt="Profile picture">
-                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
-                    </div>
-                    <div class="review-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="review-rating text-right">
-                        <img src="assets/images/rating.svg" alt="Rating">
-                    </div>
-                    <div class="review-meta text-right">
-                        <span>1500 Reviews at <strong>Google</strong></span>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="review-box">
-                    <div class="review-header">
-                        <img src="assets/images/profile-pic-r.png" alt="Profile picture">
-                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
-                    </div>
-                    <div class="review-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="review-rating text-right">
-                        <img src="assets/images/rating.svg" alt="Rating">
-                    </div>
-                    <div class="review-meta text-right">
-                        <span>1500 Reviews at <strong>Google</strong></span>
-                    </div>
-                </div>
-            </div>
-            <div class="owl-item">
-                <div class="review-box">
-                    <div class="review-header">
-                        <img src="assets/images/profile-pic-r.png" alt="Profile picture">
-                        <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
-                    </div>
-                    <div class="review-content">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    </div>
-                    <div class="review-rating text-right">
-                        <img src="assets/images/rating.svg" alt="Rating">
-                    </div>
-                    <div class="review-meta text-right">
-                        <span>1500 Reviews at <strong>Google</strong></span>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
@@ -349,23 +159,6 @@
             <h2 class="text-center">Our <strong>Partners</strong></h2>
         </div>
         <div class="row">
-            <div class="container d-flex flex-column">
-                <p>Logos and names to follow:</p>
-                <ul>
-                    <li>
-                        <p class="mb-1">Oakleaf Partnership</p>
-                    </li>
-                    <li>
-                        <p class="mb-1">Eyzon</p>
-                    </li>
-                    <li>
-                        <p class="mb-1">Carnegie</p>
-                    </li>
-                    <li>
-                        <p class="mb-1">Aspiga</p>
-                    </li>
-                </ul>
-            </div>
             <div class="col">
                 <div class="brands_slider_container">
                     <div class="owl-carousel owl-theme partners_slider">
@@ -381,8 +174,8 @@
                     </div>
                     <!-- Brands Slider Navigation -->
                     <div class="browse-navigation">
-                        <div class="partner_prev"><img src="assets/images/left-arrow.svg" alt="Previous arrow"></div>
-                        <div class="partner_next"><img src="assets/images/right-arrow.svg" alt="Next arrow"></div>
+                        <div class="partner_prev"><img src="assets/images/left-arrow.svg" class="prev" alt="Previous arrow"></div>
+                        <div class="partner_next"><img src="assets/images/right-arrow.svg" class="next" alt="Next arrow"></div>
                     </div>
                 </div>
             </div>
@@ -528,8 +321,8 @@
             </div>
         </div>
         <div class="browse-navigation">
-            <div class="trusted_prev"><img src="assets/images/left-arrow.svg" alt="Previous arrow"></div>
-            <div class="trusted_next"><img src="assets/images/right-arrow.svg" alt="Next arrow"></div>
+            <a class="trusted_prev sl_prev"><img src="assets/images/left-arrow.svg" class="" alt="Previous arrow"></a>
+            <a class="trusted_next sl_next"><img src="assets/images/right-arrow.svg"class="" alt="Next arrow"></a>
         </div>
     </div>
 </section>

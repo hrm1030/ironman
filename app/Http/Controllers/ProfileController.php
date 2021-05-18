@@ -3,6 +3,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Auth;
 class ProfileController extends Controller
 {
     public function index()
@@ -29,6 +30,24 @@ class ProfileController extends Controller
         //     ]);
         // }
         
+    }
+
+    public function save_photo(Request $request)
+    {
+        if ($request->hasFile('photo')) {
+            $filenameWithExtension = $request->file('photo')->getClientOriginalName();
+            $filenameWithoutExtension = Auth::user()->name;
+            $extension = $request->file('photo')->getClientOriginalExtension();
+            $filenameToStore = $filenameWithoutExtension.'.'.$extension;
+            // Storing The Image
+            $path = $request->file('photo')->storeAs('/upload/users', $filenameToStore);
+        } else {
+            $path = '/upload/users/avatar.png';
+        }
+        User::where('id', Auth::user()->id)->update([
+            'photo_url'=> $path
+        ]);
+        return redirect()->route('profile');
     }
 
     public function delete(Request $request)
