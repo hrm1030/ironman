@@ -194,7 +194,7 @@
                                     <div class="row">
                                         <div class="col-md-6 input-icon">
                                             
-                                            <button class="btn btn-success btn-lg btn-block"><div style="background-color: white;float:left;width:8%;height:auto;"><img src={{ url('assets/images/google.png') }}></div>Continue with Google</button>
+                                            <a href="https://console.developers.google.com" class="btn btn-success btn-lg btn-block"><div style="background-color: white;float:left;width:8%;height:auto;"><img src={{ url('assets/images/google.png') }}></div>Continue with Google</a>
                                         </div>
                                         <div class="col-md-6 input-icon">
                                             <i class="fa fa-facebook"></i>
@@ -249,7 +249,7 @@
                                     <div class="row">
                                         <div class="col-md-6 input-icon">
                                             
-                                            <button class="btn btn-success btn-lg btn-block"><div style="background-color: white;float:left;width:8%;height:auto;"><img src={{ url('assets/images/google.png') }}></div>Continue with Google</button>
+                                            <a href="https://console.developers.google.com" class="btn btn-success btn-lg btn-block"><div style="background-color: white;float:left;width:8%;height:auto;"><img src={{ url('assets/images/google.png') }}></div>Continue with Google</a>
                                         </div>
                                         <div class="col-md-6 input-icon">
                                             <i class="fa fa-facebook"></i>
