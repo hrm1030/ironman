@@ -5,13 +5,97 @@
     $(document).ready(function () {
         var owl = $("#browser_slider");
         owl.owlCarousel({
-            items : 10, //10 items above 1000px browser width
-            itemsDesktop : [1000,5], //5 items between 1000px and 901px
-            itemsDesktopSmall : [900,3], // betweem 900px and 601px
-            itemsTablet: [600,2], //2 items between 600 and 0
-            itemsMobile : false
+            items : 6,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            responsive:{
+                0:{
+                    items: 1
+                },
+                600:{
+                    items: 3
+                },
+                1000:{
+                    items: 6
+                }
+            }
         });
-        
+        $('.bro_next').click(function() {
+            owl.trigger('next.owl.carousel');
+        })
+        // Go to the previous item
+        $('.bro_prev').click(function() {
+            // With optional speed parameter
+            // Parameters has to be in square bracket '[]'
+            owl.trigger('prev.owl.carousel', [300]);
+        })
+        $('.partners_slider').owlCarousel({
+            items : 4,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            responsive:{
+                0:{
+                    items: 1
+                },
+                600:{
+                    items: 2
+                },
+                1000:{
+                    items: 4
+                }
+            }
+        });
+
+        $('.par_next').click(function() {
+            $('.partners_slider').trigger('next.owl.carousel');
+        })
+        // Go to the previous item
+        $('.par_prev').click(function() {
+            // With optional speed parameter
+            // Parameters has to be in square bracket '[]'
+            $('.partners_slider').trigger('prev.owl.carousel', [300]);
+        })
+
+        $('.review-carousel').owlCarousel({
+            items : 4,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            responsive:{
+                0:{
+                    items: 1
+                },
+                600:{
+                    items: 2
+                },
+                1000:{
+                    items: 4
+                }
+            }
+        });
+        $('.review_slider').owlCarousel({
+            autoplay: true,
+            autoplayTimeout: 5000,
+            responsive:{
+                0:{
+                    items: 1
+                },
+                600:{
+                    items: 2
+                },
+                1000:{
+                    items: 3
+                }
+            }
+        });
+        $('.re_next').click(function() {
+            $('.review_slider').trigger('next.owl.carousel');
+        })
+        // Go to the previous item
+        $('.re_prev').click(function() {
+            // With optional speed parameter
+            // Parameters has to be in square bracket '[]'
+            $('.review_slider').trigger('prev.owl.carousel', [300]);
+        })
     });
 </script>
 <section id="banner">
@@ -74,11 +158,23 @@
                         <div class="owl-item">
                             <div class="brands_item d-flex flex-column justify-content-center"><img src="assets/images/browse6.png" alt="Partner logo"></div>
                         </div>
+                        <div class="owl-item">
+                            <div class="brands_item d-flex flex-column justify-content-center"><img src="assets/images/browse3.png" alt="Partner logo"></div>
+                        </div>
+                        <div class="owl-item">
+                            <div class="brands_item d-flex flex-column justify-content-center"><img src="assets/images/browse4.png" alt="Partner logo"></div>
+                        </div>
+                        <div class="owl-item">
+                            <div class="brands_item d-flex flex-column justify-content-center"><img src="assets/images/browse5.png" alt="Partner logo"></div>
+                        </div>
+                        <div class="owl-item">
+                            <div class="brands_item d-flex flex-column justify-content-center"><img src="assets/images/browse6.png" alt="Partner logo"></div>
+                        </div>
                     </div>
                     <!-- Brands Slider Navigation -->
                     <div class="browse-navigation">
-                        <div class="partner_prev"><img src="assets/images/left-arrow.svg" class="prev" alt="Previous arrow"></div>
-                        <div class="partner_next"><img src="assets/images/right-arrow.svg" class="next" alt="Next arrow"></div>
+                        <div class="partner_prev bro_prev"><img src="assets/images/left-arrow.svg" class="" alt="Previous arrow"></div>
+                        <div class="partner_next bro_next"><img src="assets/images/right-arrow.svg" class="" alt="Next arrow"></div>
                     </div>
                 </div>
             </div>
@@ -99,7 +195,7 @@
         <h2 class="text-center">Recent <strong>reviews</strong></h2>
     </div>
     <div class="reviews-boxes">
-        <div class="owl-carousel owl-theme review-carousel" id="browser_slider">
+        <div class="owl-carousel owl-theme review-carousel">
             @foreach ($reviews as $review)
             <div class="owl-item">
                 <div class="review-box">
@@ -125,7 +221,7 @@
             </div>
             @endforeach
         </div>
-        <div class="owl-carousel owl-theme review-carousel2">
+        <div class="owl-carousel owl-theme review-carousel">
             @foreach ($reviews as $review)
             <div class="owl-item">
                 <div class="review-box">
@@ -174,8 +270,8 @@
                     </div>
                     <!-- Brands Slider Navigation -->
                     <div class="browse-navigation">
-                        <div class="partner_prev"><img src="assets/images/left-arrow.svg" class="prev" alt="Previous arrow"></div>
-                        <div class="partner_next"><img src="assets/images/right-arrow.svg" class="next" alt="Next arrow"></div>
+                        <div class="partner_prev par_prev"><img src="assets/images/left-arrow.svg" class="prev" alt="Previous arrow"></div>
+                        <div class="partner_next par_next"><img src="assets/images/right-arrow.svg" class="next" alt="Next arrow"></div>
                     </div>
                 </div>
             </div>
@@ -270,7 +366,7 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="owl-carousel owl-theme">
+        <div class="owl-carousel owl-theme review_slider">
             <div class="item-review-custom first prev-review-custom">
                 <div class="card-review-custom">
                     <div class="row justify-content-center">
@@ -321,8 +417,8 @@
             </div>
         </div>
         <div class="browse-navigation">
-            <a class="trusted_prev sl_prev"><img src="assets/images/left-arrow.svg" class="" alt="Previous arrow"></a>
-            <a class="trusted_next sl_next"><img src="assets/images/right-arrow.svg"class="" alt="Next arrow"></a>
+            <a class="trusted_prev re_prev"><img src="assets/images/left-arrow.svg" class="" alt="Previous arrow"></a>
+            <a class="trusted_next re_next"><img src="assets/images/right-arrow.svg"class="" alt="Next arrow"></a>
         </div>
     </div>
 </section>

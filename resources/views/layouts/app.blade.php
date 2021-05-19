@@ -55,19 +55,7 @@
             }
         });
     </script>
-    <script>
-        $(document).ready(function () {
-            $(".owl-carousel").owlCarousel();
-            var owl = $(".owl-carousel");
-            $(".sl_next").click(function(){
-                owl.trigger('owl.next');
-            })
-            $(".sl_prev").click(function(){
-                owl.trigger('owl.prev');
-            })
-            
-        });
-    </script>
+    
 </head>
 <body>
     @include('layouts.navbar')

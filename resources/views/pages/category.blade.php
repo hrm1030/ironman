@@ -1,6 +1,26 @@
 @extends('layouts.app')
 
 @section('page-content')
+<script>
+    $(document).ready(function () {
+        $('.review_slider').owlCarousel({
+            items:4,
+            autoplay: true,
+            autoplayTimeout: 5000,
+            responsive:{
+                0:{
+                    items: 1
+                },
+                600:{
+                    items: 2
+                },
+                1000:{
+                    items: 4
+                }
+            }
+        });
+    });
+</script>
 <section id="contact" class="account">
 
     <img class="login-detail-left" src="{{ url('assets/images/login-detail-left.png') }}">
@@ -514,7 +534,7 @@
         <h2 class="text-center">Recent <strong>reviews</strong></h2>
     </div>
     <div class="reviews-boxes">
-        <div class="owl-carousel owl-theme review-carousel2">
+        <div class="owl-carousel owl-theme review_slider">
             @foreach ($recent_reviews as $review)
             <div class="owl-item">
                 <div class="review-box">
