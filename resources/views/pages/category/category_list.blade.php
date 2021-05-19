@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('page-content')
+<script src="{{ url('assets/js/pages/category/list.js') }}"></script>
 <section id="contact" class="account">
 
     <img class="login-detail-left" src="assets/images/login-detail-left.png">
@@ -15,7 +16,7 @@
 
             <div class="row">
                 <div class="col-md-5">
-                    <div class="d-flex nav mt-0">
+                    <div class="d-flex nav mt-0" id="parent_cat">
 
                         <ul class="nav nav-tabs d-flex flex-column mx-auto mx-lg-0" id="myAccount">
                             @foreach ($categories as $category)

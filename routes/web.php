@@ -11,7 +11,8 @@
 |
 */
 
-
+use App\Category;
+use App\Review;
 
 Auth::routes();
 
@@ -32,7 +33,10 @@ Route::prefix('/')->group(function() {
 
     Route::prefix('category')->group(function() {
         Route::get('/', 'CategoryController@index')->name('category');
-        Route::get('/{pid}/{ch_id}', 'CategoryController@detail');
+        Route::get('/{pid}/{ch_id}', function($pid, $ch_id) {
+            $recent_reivews = Review::orderBy('regarding', 'desc')->limit(10)->get();
+            return view('pages.category')->with('recent_reviews', $recent_reivews);
+        });
     });
 
     Route::prefix('about')->group(function() {

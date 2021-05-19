@@ -152,7 +152,7 @@
 
                         <div class="review-card-header">
 
-                            <img src="assets/images/starbucks-back.png" alt="starbucks background" title="starbucks background" class="img-fluid">
+                            <img src="{{ url('assets/images/starbucks-back.png') }}" alt="starbucks background" title="starbucks background" class="img-fluid">
 
                         </div>
 
@@ -160,7 +160,7 @@
 
                             <div class="col-sm-2 card-logo mb-3">
 
-                                <img src="assets/images/starbucks.png">
+                                <img src="{{ url('assets/images/starbucks.png') }}">
 
                             </div>
 
@@ -208,7 +208,7 @@
 
                         <div class="review-card-header">
 
-                            <img src="assets/images/costa-back.png" alt="starbucks background" title="starbucks background" class="img-fluid">
+                            <img src="{{ url('assets/images/costa-back.png') }}" alt="starbucks background" title="starbucks background" class="img-fluid">
 
                         </div>
 
@@ -216,7 +216,7 @@
 
                             <div class="col-sm-2 card-logo mb-3">
 
-                                <img src="assets/images/costa.png">
+                                <img src="{{ url('assets/images/costa.png') }}">
 
                             </div>
 
@@ -264,7 +264,7 @@
 
                         <div class="review-card-header">
 
-                            <img src="assets/images/dunkin-back.png" alt="starbucks background" title="starbucks background" class="img-fluid">
+                            <img src="{{ url('assets/images/dunkin-back.png') }}" alt="starbucks background" title="starbucks background" class="img-fluid">
 
                         </div>
 
@@ -272,7 +272,7 @@
 
                             <div class="col-sm-2 card-logo mb-3">
 
-                                <img src="assets/images/dunkin.png">
+                                <img src="{{ url('assets/images/dunkin.png') }}">
 
                             </div>
 
@@ -539,7 +539,7 @@
             <div class="owl-item">
                 <div class="review-box">
                     <div class="review-header">
-                        <img src="assets/images/profile-pic-r.png" alt="Profile picture">
+                        <img src="{{ url('assets/images/profile-pic-r.png') }}" alt="Profile picture">
                         <span><strong>Richard Gellen</strong> reviewed <strong>BNP Paribas</strong></span>
                     </div>
                     <div class="review-content">

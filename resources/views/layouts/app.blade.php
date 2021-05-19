@@ -21,11 +21,11 @@
     <link href="{{ url('assets/plugin/uniform/css/uniform.default.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url('assets/plugin/bootstrap-toastr/toastr.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ url('assets/plugin/bootstrap-datepicker/css/datepicker3.css') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="../../assets/plugin/bootstrap-select/bootstrap-select.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../../assets/plugin/select2/select2.css"/>
-    <link rel="stylesheet" type="text/css" href="../../assets/plugin/bootstrap-fileinput/bootstrap-fileinput.css"/>
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/plugin/bootstrap-select/bootstrap-select.min.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/plugin/select2/select2.css') }}"/>
+    <link rel="stylesheet" type="text/css" href="{{ url('assets/plugin/bootstrap-fileinput/bootstrap-fileinput.css') }}"/>
 
-    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="{{ url('assets/css/owl.carousel.min.css') }}">
     <link href="{{ url('assets/css/components-rounded.css') }}" id="style_components" rel="stylesheet" type="text/css"/>
     <link href="{{ url('assets/css/plugins.css') }}" rel="stylesheet" type="text/css"/>
 
@@ -42,11 +42,12 @@
     <script src="{{ url('assets/plugin/bootstrap-datepicker/js/bootstrap-datepicker.js') }}"></script>
     <script type="text/javascript" src="{{ url('assets/plugin/bootstrap-select/bootstrap-select.min.js') }}"></script>
     <script type="text/javascript" src="{{ url('assets/plugin/select2/select2.min.js') }}"></script>
-    <script type="text/javascript" src="../../assets/plugin/bootstrap-fileinput/bootstrap-fileinput.js"></script>
+    <script type="text/javascript" src="{{ url('assets/plugin/bootstrap-fileinput/bootstrap-fileinput.js') }}"></script>
+    <script src="{{ url('assets/plugin/jquery-slimscroll/jquery.slimscroll.min.js') }}" type="text/javascript"></script>
     <script src="{{ url('assets/js/metronic.js') }}" type="text/javascript"></script>
 
-    <script src="assets/js/owl.carousel.js"></script>
-    <script src="assets/js/script.js"></script>
+    <script src="{{ url('assets/js/owl.carousel.js') }}"></script>
+    <script src="{{ url('assets/js/script.js') }}"></script>
 
     <script>
         $.ajaxSetup({
